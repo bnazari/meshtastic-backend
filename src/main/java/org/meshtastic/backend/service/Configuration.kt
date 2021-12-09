@@ -37,5 +37,10 @@ class Configuration {
      * The topic root for our JSON republishes
      */
     val jsonRoot get() = "$topicRoot$protoVersion/json/"
+    
+     /**
+     * The topic root for our inbound json messages
+     */
+    val inboundRoot get() = "$topicRoot$protoVersion/inbound/"
 
 }
