@@ -48,8 +48,8 @@ fun decrypt(keyBytes: ByteArray, from: Int, id: Int, inBytes: ByteArray): ByteAr
     cipher.init(mode, key, ivSpec)
     return cipher.doFinal(inBytes)
 }
-fun encrypt(keyBytes: ByteArray, from: Int, id: Int, inBytes: ByteArray): ByteArray {
 
+fun encrypt(keyBytes: ByteArray, from: Int, id: Int, inBytes: ByteArray): ByteArray {
     val ivSpec = genNonce(from, id)
     val cipher = Cipher.getInstance("AES/CTR/NoPadding")
     val mode = Cipher.ENCRYPT_MODE
@@ -57,5 +57,4 @@ fun encrypt(keyBytes: ByteArray, from: Int, id: Int, inBytes: ByteArray): ByteAr
     cipher.init(mode, key, ivSpec)
     val returnValue = cipher.doFinal(inBytes)
     return returnValue
-
 }
